@@ -1,0 +1,32 @@
+This program takes in input regarding genes and their respective health values, and a set of DNA strands with starting and ending positions, and returns the minimum and maximum health of the DNA strands.
+
+Dependencies:
+The program requires the following dependencies:
+
+math
+bisect
+collections
+Usage
+To run the program, execute the main.py file using Python. The program takes input from standard input and returns output to standard output.
+
+Input format:
+The input format consists of the following:
+
+An integer howGenes representing the number of genes.
+A string of howGenes space-separated strings, representing the genes.
+A string of howGenes space-separated integers, representing the health values of the corresponding genes.
+An integer howStrands representing the number of DNA strands to be tested.
+howStrands lines, each containing a space-separated integer first, a space-separated integer last, and a string strand.
+Output format
+The program returns two space-separated integers, representing the minimum and maximum health of the DNA strands.
+
+Code Overview:
+1.Import the necessary libraries.
+2.Define a function getHealth to calculate the health of a DNA strand.
+3.Read in the input values for howGenes, genes, healths, and howStrands.
+4.Create a dictionary gMap that maps genes to a list of indices and their respective health values.
+5.Create a set subs of all possible substrings of the genes.
+6.Calculate the cumulative health values of each gene in gMap.
+7.Calculate the largest length of the genes.
+8.Loop over the number of strands and calculate the health of each strand using the getHealth function.
+9.Return the minimum and maximum health values of the strands.
