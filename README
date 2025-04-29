@@ -3,31 +3,44 @@ This program takes in input regarding genes and their respective health values, 
 Dependencies:
 The program requires the following dependencies:
 
-math
-bisect
-collections
+math  
+bisect  
+collections  
+logging  
 
 Usage:
-To run the program, execute the main.py file using Python. The program takes input from standard input and returns output to standard output.
+To run the program, execute the `main.py` file using Python. The program reads input from standard input and outputs results to standard output.
+
+New Features:
+1. Support for weighted genes: Genes now have weights that influence their health calculation.
+2. Query system: Users can query specific genes or strands for their health values.
+3. Optimized performance: A Trie data structure is used for efficient substring matching.
+4. Unit tests: A testing framework ensures the correctness of the program.
+5. Configuration file: Users can specify input parameters via a configuration file.
+6. Logging: Logs track the program's execution and help debug issues.
 
 Input format:
 The input format consists of the following:
 
-An integer howGenes representing the number of genes.
-A string of howGenes space-separated strings, representing the genes.
-A string of howGenes space-separated integers, representing the health values of the corresponding genes.
-An integer howStrands representing the number of DNA strands to be tested.
-howStrands lines, each containing a space-separated integer first, a space-separated integer last, and a string strand.
-Output format
+1. An integer `howGenes` representing the number of genes.
+2. A string of `howGenes` space-separated strings, representing the genes.
+3. A string of `howGenes` space-separated integers, representing the health values of the corresponding genes.
+4. A string of `howGenes` space-separated floats, representing the weights of the corresponding genes.
+5. An integer `howStrands` representing the number of DNA strands to be tested.
+6. `howStrands` lines, each containing:
+   - A space-separated integer `first`,
+   - A space-separated integer `last`,
+   - And a string `strand`.
+
+Output format:
 The program returns two space-separated integers, representing the minimum and maximum health of the DNA strands.
 
 Code Overview:
-1.Import the necessary libraries.
-2.Define a function getHealth to calculate the health of a DNA strand.
-3.Read in the input values for howGenes, genes, healths, and howStrands.
-4.Create a dictionary gMap that maps genes to a list of indices and their respective health values.
-5.Create a set subs of all possible substrings of the genes.
-6.Calculate the cumulative health values of each gene in gMap.
-7.Calculate the largest length of the genes.
-8.Loop over the number of strands and calculate the health of each strand using the getHealth function.
-9.Return the minimum and maximum health values of the strands.
+1. Import the necessary libraries.
+2. Define a function `getHealth` to calculate the health of a DNA strand.
+3. Read in the input values for `howGenes`, `genes`, `healths`, `weights`, and `howStrands`.
+4. Create a Trie data structure for efficient substring matching.
+5. Implement a query system for specific genes or strands.
+6. Add logging to track execution and debug issues.
+7. Use a configuration file for input parameters.
+8. Add unit tests to ensure correctness.
